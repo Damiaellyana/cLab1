@@ -16,7 +16,10 @@ int main(int argc, char *argv[]) {
 		printf("Please select your beverage(Coke, Pepsi or Sprite): ");
 		scanf("%s", beverage);
 		
-		switch(beverage[0]){
+		if (beverage[0] != 'P' && beverage[0] != 'C' && beverage[0] != 'S') {
+        	printf("Error: Invalid option. Please select Coke, Pepsi, or Sprite\n");
+        } else {
+        	switch(beverage[0]){
 			case 'P':
 				amount = PRICE_PER_CAN;
 			break;
@@ -26,16 +29,14 @@ int main(int argc, char *argv[]) {
 			case 'S':
 				amount = PRICE_PER_CAN;
 			break;
-			default:
-				printf("Error: Invalid option. Please select Coke, Pepsi, or Sprite\n");
-            return 1;
+			
+			}
+			printf("Please select the amount of cans to be purchased: ");
+			scanf("%d", &quantity);
+		
+			amount *= quantity;
+			printf("You have selected %d %s. Amount due: RM%.2f\n", quantity, beverage, amount);
 		}
-		
-		printf("Please select the amount of cans to be purchased: ");
-		scanf("%d", &quantity);
-		
-		amount *= quantity;
-		printf("You have selected %d %s. Amount due: RM%.2f\n", quantity, beverage, amount);
 
 	
 	return 0;
