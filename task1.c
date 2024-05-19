@@ -7,15 +7,17 @@
 
 int main(int argc, char *argv[]) {
 
-		char beverage[10];
-		int quantity;
-		const float PRICE_PER_CAN = 3.25;
-		float amount = 0.0;
+		char beverage[10]; // Array to store the selected beverage
+		int quantity; // Variable to store the quantity of cans
+		const float PRICE_PER_CAN = 3.25;  // Constant price per can
+		float amount = 0.0; // Variable to store the total amount due
 		
 		printf("Welcome to the Beverage Vending Machine!\n");
 		printf("Please select your beverage(Coke, Pepsi or Sprite): ");
-		scanf("%s", beverage);
-		
+		scanf("%s", beverage);  
+	        // Read the beverage selection from the user
+
+	        // Check if the selected beverage is valid
 		if (beverage[0] != 'P' && beverage[0] != 'C' && beverage[0] != 'S') {
         	printf("Error: Invalid option. Please select Coke, Pepsi, or Sprite\n");
         } else {
@@ -32,9 +34,11 @@ int main(int argc, char *argv[]) {
 			
 			}
 			printf("Please select the amount of cans to be purchased: ");
-			scanf("%d", &quantity);
+			scanf("%d", &quantity); // Read the quantity from the user
 		
-			amount *= quantity;
+			amount *= quantity; // Calculate the total amount due
+
+			// Display the selected beverage, quantity, and total amount
 			printf("You have selected %d %s. Amount due: RM%.2f\n", quantity, beverage, amount);
 		}
 
